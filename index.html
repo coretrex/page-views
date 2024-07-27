@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Views Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="CoreTrex_Horizontal_White.png" alt="CoreTrex Logo" class="logo">
+    </div>
+    <div class="header">
+        <h1>Amazon Page Views Calculator</h1>
+        <h2>Calculate the page views necessary to achieve your annual revenue goals by entering the information below.</h2>
+    </div>
+    <div class="container">
+        <div class="input-container">
+            <div class="input-box">
+                <label for="revenueGoal">Annual Revenue Goal ($):</label>
+                <input type="text" id="revenueGoal" placeholder="$1,000,000" oninput="formatCurrency(this)">
+            </div>
+            <div class="input-box">
+                <label for="aov">Average Order Value ($):</label>
+                <input type="text" id="aov" placeholder="$50" oninput="formatCurrency(this)">
+            </div>
+            <div class="input-box">
+                <label for="conversionRate">Conversion Rate (%):</label>
+                <input type="range" id="conversionRate" min="0.25" max="50" step="0.25" value="0.25" oninput="updateRangeValue(this.value)">
+                <div class="range-value" id="rangeValue">0.25%</div>
+            </div>
+        </div>
+        <button onclick="calculatePageViews()">Calculate Page Views</button>
+        <div class="results" id="results" style="display:none;"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
